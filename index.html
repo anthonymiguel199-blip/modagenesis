@@ -20,13 +20,12 @@
     }
     #track::-webkit-scrollbar { display: none; }
     
-    /* Estilo das bolinhas */
     .dot {
       transition: all 0.3s ease;
     }
     .dot.active {
-      background-color: #38bdf8; /* sky-400 */
-      width: 1.5rem; /* Estica a bolinha ativa */
+      background-color: #38bdf8;
+      width: 1.5rem;
     }
   </style>
 </head>
@@ -55,66 +54,65 @@
             Marketing de Elite
           </p>
 
-          <div class="mx-auto mt-4 h-px w-40 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
+          <div class="mx-auto mt-4 h-[1px] w-40 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
 
           <p class="mx-auto mt-4 max-w-xs text-sm leading-6 text-zinc-300">
-            Aumentamos as vendas do seu negócio com Google Ads, Redes Sociais e sites profissionais. Resultados reais para o seu caixa.
+            Aumentamos as vendas do seu negócio com Google Ads, Redes Sociais e sites profissionais.
           </p>
         </div>
 
-        <div class="mt-8 space-y-3">
-          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-300/70 bg-gradient-to-r from-[#0a192f] via-zinc-900 to-[#0f2942] px-6 py-3.5 text-sm font-semibold text-sky-100 shadow-[0_0_20px_rgba(56,189,248,0.15)] transition hover:-translate-y-0.5">
-            <img src="/whatsapp.png" class="absolute left-6 h-5 w-5 object-contain" alt="">
+        <div class="mt-8 space-y-4">
+          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center rounded-xl border border-sky-300/70 bg-gradient-to-r from-[#0a192f] via-zinc-900 to-[#0f2942] px-6 py-5 text-base font-bold text-sky-100 shadow-[0_0_20px_rgba(56,189,248,0.15)] transition hover:brightness-125 active:scale-95">
+            <img src="/whatsapp.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
             <span>Falar no WhatsApp</span>
           </a>
 
-          <a href="https://instagram.com/nexuxmarketingdigital/" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-3.5 text-sm font-semibold text-sky-100 transition hover:-translate-y-0.5">
-            <img src="/instagram.png" class="absolute left-6 h-5 w-5 object-contain" alt="">
+          <a href="https://instagram.com/nexuxmarketingdigital/" target="_blank" class="relative flex items-center justify-center rounded-xl border border-sky-400/45 bg-zinc-900/85 px-6 py-5 text-base font-semibold text-sky-100 transition hover:bg-zinc-800 active:scale-95">
+            <img src="/instagram.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
             <span>Ver Instagram</span>
           </a>
 
-          <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-3.5 text-sm font-semibold text-sky-100 transition hover:-translate-y-0.5">
-            <img src="/mapa.png" class="absolute left-6 h-5 w-5 object-contain" alt="">
+          <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" class="relative flex items-center justify-center rounded-xl border border-sky-400/45 bg-zinc-900/85 px-6 py-5 text-base font-semibold text-sky-100 transition hover:bg-zinc-800 active:scale-95">
+            <img src="/mapa.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
             <span>Ver Empresa no Google</span>
           </a>
 
-            <a href="https://g.page/r/CS_WHBu00g1wEBM/review" target="_blank" rel="noopener noreferrer" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-3.5 text-xs font-semibold text-sky-100 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-[0_0_22px_rgba(56,189,248,0.18)]">
-            <img src="/avaliacao.png" class="absolute left-6 h-5 w-5 object-contain" alt="" />
-            <span>Avaliar Empresa no Google</span>
+          <a href="https://g.page/r/CS_WHBu00g1wEBM/review" target="_blank" class="relative flex items-center justify-center rounded-xl border border-sky-400/45 bg-zinc-900/85 px-6 py-5 text-sm font-semibold text-sky-100 transition hover:bg-zinc-800 active:scale-95">
+            <img src="/avaliacao.png" class="absolute left-6 h-6 w-6 object-contain" alt="" />
+            <span>Avaliar no Google</span>
           </a>
         </div>
 
         <div id="servicos" class="mt-10 border-t border-sky-400/20 pt-6">
           <div class="text-center">
             <h2 class="text-lg font-bold text-sky-200 uppercase tracking-widest">Nossos Serviços</h2>
-            <p class="mt-2 text-sm text-zinc-400">Deslize para ver resultados.</p>
           </div>
 
           <div class="group mt-5 overflow-hidden rounded-[28px] border border-sky-400/25 bg-zinc-900/70 p-3 shadow-[0_0_30px_rgba(56,189,248,0.08)]">
             <div class="relative overflow-hidden rounded-[22px]" id="carousel-area">
               <div id="track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%)">
                 <div class="relative min-w-full">
-                  <img src="/servico-1.png" class="h-64 w-full object-cover" alt="" />
+                  <img src="/servico-1.png" class="h-64 w-full object-cover" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                   <div class="absolute bottom-0 p-4 text-left">
                     <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Google Ads</p>
-                    <p class="text-sm text-white">Anúncios que vendem todo dia.</p>
+                    <p class="text-sm text-white">Vendas diárias escaláveis.</p>
                   </div>
                 </div>
                 <div class="relative min-w-full">
-                  <img src="/servico-2.png" class="h-64 w-full object-cover" alt="" />
+                  <img src="/servico-2.png" class="h-64 w-full object-cover" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                   <div class="absolute bottom-0 p-4 text-left">
                     <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Web Design</p>
-                    <p class="text-sm text-white">Sites modernos e profissionais.</p>
+                    <p class="text-sm text-white">Sites de alta performance.</p>
                   </div>
                 </div>
                 <div class="relative min-w-full">
-                  <img src="/servico-3.png" class="h-64 w-full object-cover" alt="" />
+                  <img src="/servico-3.png" class="h-64 w-full object-cover" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                   <div class="absolute bottom-0 p-4 text-left">
                     <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Social Media</p>
-                    <p class="text-sm text-white">Presença digital estratégica.</p>
+                    <p class="text-sm text-white">Estratégia e autoridade.</p>
                   </div>
                 </div>
               </div>
@@ -128,57 +126,14 @@
           </div>
         </div>
 
-        <div class="mt-12 space-y-6">
-          <h2 class="text-center text-lg font-bold text-sky-200 uppercase tracking-widest">Por que nos escolher?</h2>
-          <div class="grid grid-cols-2 gap-3">
-            <div class="p-4 rounded-3xl border border-sky-400/10 bg-zinc-900/40 backdrop-blur-sm transition-all hover:border-sky-400/40">
-              <span class="text-2xl">📈</span>
-              <h3 class="mt-2 text-xs font-bold text-sky-100 uppercase">Resultados</h3>
-              <p class="mt-1 text-[11px] text-zinc-400 leading-tight">Foco total no retorno do seu investimento.</p>
-            </div>
-            <div class="p-4 rounded-3xl border border-sky-400/10 bg-zinc-900/40 backdrop-blur-sm transition-all hover:border-sky-400/40">
-              <span class="text-2xl">🎯</span>
-              <h3 class="mt-2 text-xs font-bold text-sky-100 uppercase">Estratégia</h3>
-              <p class="mt-1 text-[11px] text-zinc-400 leading-tight">Público qualificado para o seu negócio.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-12 border-t border-sky-400/20 pt-8 pb-4">
-          <h2 class="text-center text-lg font-bold text-sky-200 uppercase tracking-widest mb-6">Como Funciona</h2>
-          <div class="space-y-4">
-            <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-sky-400/10">
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-400 text-black font-bold text-sm">1</span>
-              <div>
-                <p class="text-xs font-bold text-sky-100 uppercase">Consultoria</p>
-                <p class="text-[11px] text-zinc-400">Analisamos seu negócio e definimos as melhores estratégias digitais.</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-sky-400/10">
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-400 text-black font-bold text-sm">2</span>
-              <div>
-                <p class="text-xs font-bold text-sky-100 uppercase">Execução</p>
-                <p class="text-[11px] text-zinc-400">Criamos seus anúncios, sites e campanhas de alta conversão.</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-sky-400/10">
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-400 text-black font-bold text-sm">3</span>
-              <div>
-                <p class="text-xs font-bold text-sky-100 uppercase">Escala</p>
-                <p class="text-[11px] text-zinc-400">Monitoramos e otimizamos para atrair cada vez mais clientes.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="mt-10 px-2">
-          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center w-full py-4 rounded-full bg-gradient-to-r from-sky-500 via-sky-400 to-blue-600 text-black font-black uppercase tracking-tighter text-sm shadow-[0_0_25px_rgba(56,189,248,0.35)] hover:scale-[1.02] active:scale-95 transition-all">
-            Impulsionar meu negócio agora!
+          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center w-full py-5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-400 to-blue-600 text-black font-black uppercase tracking-tighter text-sm shadow-[0_0_25px_rgba(56,189,248,0.35)] active:scale-95 transition-all">
+            Impulsionar negócio agora!
           </a>
         </div>
 
         <p class="mt-12 text-center text-[10px] tracking-widest text-zinc-600 uppercase">
-          © 2026 Nexux Digital • Todos os direitos reservados
+          © 2026 Nexux Digital
         </p>
 
       </div>
@@ -196,7 +151,6 @@
       logo.style.opacity = opacity;
     });
 
-    // Lógica do Carrossel Atualizada para Bolinhas
     const track = document.getElementById('track');
     const carouselArea = document.getElementById('carousel-area');
     const dots = document.querySelectorAll('.dot');
@@ -206,7 +160,6 @@
 
     function updateCarousel() {
       track.style.transform = `translateX(-${index * 100}%)`;
-      // Atualiza as bolinhas
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
       });
