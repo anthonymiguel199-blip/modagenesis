@@ -8,7 +8,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
-    /* Reset de força bruta para evitar zoom out e rolagem lateral */
     html, body {
       width: 100%;
       overflow-x: hidden;
@@ -16,134 +15,148 @@
       padding: 0;
       touch-action: manipulation;
       background-color: #020617;
+      scroll-behavior: smooth;
     }
-    /* Garante que nada ultrapasse o limite da tela do celular */
     * {
       max-width: 100vw;
       box-sizing: border-box;
     }
-    img {
-      max-width: 100%;
-      height: auto;
+
+    /* EFEITO HERO LINKTREE: Header fixo que encolhe */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-top: 2.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    /* Estilo quando o usuário rola a página */
+    .sticky-header.scrolled {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      background: rgba(2, 6, 23, 0.7);
+      backdrop-filter: blur(12px); /* Correção do blur aqui */
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+    }
+
+    .logo-img {
+      width: 280px; /* Tamanho inicial grande */
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: drop-shadow(0 0 20px rgba(135, 169, 184, 0.3));
+    }
+
+    .scrolled .logo-img {
+      width: 150px; /* Tamanho reduzido igual Linktree */
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.45rem !important; line-height: 1.2 !important; }
     }
   </style>
 </head>
 <body class="bg-[#020617]">
   <div class="min-h-screen w-full overflow-x-hidden bg-[#020617] text-white">
-    <div class="relative min-h-screen">
+    
+    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.15),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(37,99,235,0.12),_transparent_22%)] pointer-events-none"></div>
+    
+    <div class="fixed left-2 top-2 h-[98%] w-[calc(100%-16px)] rounded-[36px] border border-sky-400/10 pointer-events-none z-0"></div>
+
+    <header id="main-header" class="sticky-header">
+      <img id="logo" src="/logo5.webp" alt="Nexux" class="logo-img" />
+    </header>
+
+    <div class="relative mx-auto flex flex-col items-center p-2 pb-20 w-full max-w-[420px] z-10">
       
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.15),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(37,99,235,0.12),_transparent_22%)]"></div>
-      <div class="absolute inset-0 opacity-60 bg-[linear-gradient(135deg,transparent_0%,transparent_18%,rgba(56,189,248,0.12)_18.4%,transparent_19.2%,transparent_81%,rgba(37,99,235,0.1)_81.4%,transparent_82.2%)]"></div>
-      <div class="absolute left-3 top-3 h-[96%] w-[calc(100%-24px)] rounded-[36px] border border-sky-400/20"></div>
-
-      <div class="relative mx-auto flex min-h-screen w-full max-w-[380px] items-center justify-center p-4">
+      <div class="w-full rounded-[32px] border border-sky-400/30 bg-slate-950/90 px-5 py-8 shadow-[0_0_60px_rgba(56,189,248,0.12)] backdrop-blur-md">
         
-        <div class="w-full rounded-[36px] border border-sky-400/30 bg-slate-950/90 px-6 py-8 shadow-[0_0_60px_rgba(56,189,248,0.12)] backdrop-blur-sm">
+        <div class="text-center">
+          <h1 class="bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-2xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.2)]">
+            QUER MAIS CLIENTES PARA O SEU NEGÓCIO?
+          </h1>
           
+          <p class="mt-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-sky-200/90 leading-relaxed px-2">
+            Aumente as vendas com Google Ads e Redes Sociais.
+          </p>
+          
+          <div class="mx-auto mt-5 h-px w-32 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
+        </div>
+
+        <div class="mt-8 space-y-3">
+          <a href="https://wa.me/5519974038573" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-bold transition duration-200 hover:-translate-y-0.5 border-sky-400/60 bg-gradient-to-r from-[#0a192f] via-slate-900 to-[#0f2942] text-white shadow-[0_0_25px_rgba(56,189,248,0.2)]">
+            <img src="/whatsapp.png" class="h-6 w-6 object-contain" alt="WhatsApp" />
+            <span class="absolute left-1/2 -translate-x-1/2">Falar no WhatsApp</span>
+          </a>
+
+          <a href="https://www.instagram.com/nexuxmarketingdigital/" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 border-blue-400/30 bg-slate-900/80 text-white">
+            <img src="/instagram.png" class="h-6 w-6 object-contain" alt="Instagram" />
+            <span class="absolute left-1/2 -translate-x-1/2">Ver Instagram</span>
+          </a>
+
+          <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-[12px] font-semibold transition duration-200 hover:-translate-y-0.5 border-blue-400/30 bg-slate-900/80 text-white">
+            <img src="/mapa.png" class="h-6 w-6 object-contain" alt="Localização" />
+            <span class="absolute left-1/2 -translate-x-1/2 whitespace-nowrap">Ver Empresa no Google</span>
+          </a>
+        </div>
+
+        <div class="mt-10 border-t border-sky-400/20 pt-6">
           <div class="text-center">
-            <div class="mb-0 flex justify-center overflow-visible">
-              <img id="logo" src="/logo5.webp" alt="Nexux" class="w-[260px] max-w-full object-contain transition-transform duration-150 hover:scale-105" style="filter: drop-shadow(0 0 20px rgba(135, 169, 184, 0.4)); will-change: transform, opacity;" />
-            </div>
-
-            <h1 class="-mt-4 bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.2)]">
-              QUER MAIS CLIENTES PARA O SEU NEGÓCIO?
-            </h1>
-            
-            <p class="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-sky-200/90 leading-relaxed">
-              Ajudamos empresas a atrair mais clientes com Google Meu Negócio, Ads e Redes Sociais.<br>Mais visibilidade, contatos e vendas.
-            </p>
-            
-            <div class="mx-auto mt-4 h-px w-32 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
-            
-            <p class="mx-auto mt-4 max-w-xs text-sm leading-6 text-slate-300">
-              Transformamos o digital da sua empresa em resultados reais para o seu caixa.
-            </p>
+            <h2 class="text-lg font-bold text-sky-200">Nossos Serviços</h2>
+            <p class="mt-1 text-[12px] text-slate-400">Deslize para ver nosso trabalho.</p>
           </div>
 
-          <div class="mt-8 space-y-3">
-            <a href="https://wa.me/5519974038573" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 border-sky-400/60 bg-gradient-to-r from-[#0a192f] via-slate-900 to-[#0f2942] text-white shadow-[0_0_25px_rgba(56,189,248,0.2)]">
-              <img src="/whatsapp.png" class="h-5 w-5 object-contain" alt="icone" />
-              <span class="absolute left-1/2 -translate-x-1/2">Falar no WhatsApp</span>
-            </a>
-
-            <a href="https://www.instagram.com/nexuxmarketingdigital/" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 border-blue-400/30 bg-slate-900/80 text-white">
-              <img src="/instagram.png" class="h-5 w-5 object-contain" alt="icone" />
-              <span class="absolute left-1/2 -translate-x-1/2">Ver Instagram</span>
-            </a>
-
-            <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 border-blue-400/30 bg-slate-900/80 text-white">
-              <img src="/mapa.png" class="h-5 w-5 object-contain" alt="icone" />
-              <span class="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[12px]">Ver Empresa no Google</span>
-            </a>
-
-            <a href="https://g.page/r/CS_WHBu00g1wEBM/review" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 border-blue-400/30 bg-slate-900/80 text-white">
-              <img src="/avaliacao.png" class="h-5 w-5 object-contain" alt="icone" />
-              <span class="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[12px]">Avaliar no Google</span>
-            </a>
-          </div>
-
-          <div class="mt-10 border-t border-sky-400/20 pt-6">
-            <div class="text-center">
-              <h2 class="text-base font-bold text-sky-200">Nossos Serviços</h2>
-              <p class="mt-1 text-[12px] text-slate-400">Deslize para ver um pouco do nosso trabalho.</p>
-            </div>
-
-            <div id="carousel-container" class="group mt-5 overflow-hidden rounded-[28px] border border-sky-400/20 bg-slate-900/60 p-2 shadow-[0_0_30px_rgba(56,189,248,0.05)]">
-              <div class="relative overflow-hidden rounded-[22px]">
-                
-                <div id="carousel-track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%);">
-                  
-                  <div class="relative min-w-full">
-                    <img src="/servico-1.png" alt="Serviço 1" class="h-44 w-full object-cover" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 text-left">
-                      <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">Desenvolvimento Web</p>
-                      <p class="mt-1 text-sm font-medium text-white">Sites ultrarrápidos e modernos.</p>
-                    </div>
+          <div id="carousel-container" class="group mt-5 overflow-hidden rounded-[28px] border border-sky-400/20 bg-slate-900/60 p-2 shadow-[0_0_30px_rgba(56,189,248,0.05)]">
+            <div class="relative overflow-hidden rounded-[22px]">
+              <div id="carousel-track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%);">
+                <div class="relative min-w-full">
+                  <img src="/servico-1.png" alt="Serviço 1" class="h-48 w-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <p class="text-[10px] font-bold uppercase text-sky-300">Desenvolvimento Web</p>
+                    <p class="text-sm font-medium text-white">Sites modernos e velozes.</p>
                   </div>
-
-                  <div class="relative min-w-full">
-                    <img src="/servico-2.png" alt="Serviço 2" class="h-44 w-full object-cover" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 text-left">
-                      <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">Google Meu Negócio</p>
-                      <p class="mt-1 text-[10px] leading-tight text-white">Domine as buscas locais.</p>
-                    </div>
-                  </div>
-
-                  <div class="relative min-w-full">
-                    <img src="/servico-3.png" alt="Serviço 3" class="h-44 w-full object-cover" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 text-left">
-                      <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">Tráfego Pago (Anúncios)</p>
-                      <p class="mt-1 text-sm font-medium text-white">Venda para quem quer comprar.</p>
-                    </div>
-                  </div>
-
                 </div>
-
-                <button id="prev-btn" class="hidden md:block absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-sky-300/40 bg-slate-900/80 px-3 py-2 text-lg text-sky-200 opacity-0 group-hover:opacity-100">‹</button>
-                <button id="next-btn" class="hidden md:block absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-sky-300/40 bg-slate-900/80 px-3 py-2 text-lg text-sky-200 opacity-0 group-hover:opacity-100">›</button>
-              </div>
-
-              <div class="mt-4 flex items-center justify-between gap-3 px-2">
-                <div class="flex justify-center gap-2">
-                  <button data-index="0" class="carousel-dot h-2 rounded-full w-8 bg-sky-400"></button>
-                  <button data-index="1" class="carousel-dot h-2 rounded-full w-2 bg-slate-600"></button>
-                  <button data-index="2" class="carousel-dot h-2 rounded-full w-2 bg-slate-600"></button>
+                <div class="relative min-w-full">
+                  <img src="/servico-2.png" alt="Serviço 2" class="h-48 w-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <p class="text-[10px] font-bold uppercase text-sky-300">Google Meu Negócio</p>
+                    <p class="text-sm font-medium text-white">Domine as buscas locais.</p>
+                  </div>
                 </div>
-                <p class="text-[10px] font-medium uppercase tracking-[0.18em] text-slate-400">
-                  <span id="current-slide-counter">01</span> / 03
-                </p>
+                <div class="relative min-w-full">
+                  <img src="/servico-3.png" alt="Serviço 3" class="h-48 w-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <p class="text-[10px] font-bold uppercase text-sky-300">Tráfego Pago</p>
+                    <p class="text-sm font-medium text-white">Anúncios que vendem.</p>
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
   <script src="./script.js"></script>
+  <script>
+    // Ativa o encolhimento da logo no scroll
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
