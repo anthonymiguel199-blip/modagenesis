@@ -79,18 +79,18 @@
         <div id="servicos" class="mt-10 border-t border-sky-400/20 pt-6">
           <div class="text-center">
             <h2 class="text-lg font-bold text-sky-200 uppercase tracking-widest">Nossos Serviços</h2>
-            <p class="mt-2 text-sm text-zinc-400">Deslize para ver resultados.</p>
+            <p class="mt-2 text-sm text-zinc-400">Arraste para o lado para ver mais.</p>
           </div>
 
           <div class="group mt-5 overflow-hidden rounded-[28px] border border-sky-400/25 bg-zinc-900/70 p-3 shadow-[0_0_30px_rgba(56,189,248,0.08)]">
-            <div class="relative overflow-hidden rounded-[22px]">
+            <div class="relative overflow-hidden rounded-[22px]" id="carousel-area">
               <div id="track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%)">
                 <div class="relative min-w-full">
                   <img src="/servico-1.png" class="h-64 w-full object-cover" alt="" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                   <div class="absolute bottom-0 p-4 text-left">
                     <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Google Ads</p>
-                    <p class="text-sm text-white">Anúncios que vendem todo dia.</p>
+                    <p class="text-sm text-white">Campanhas focadas em gerar vendas imediatas.</p>
                   </div>
                 </div>
                 <div class="relative min-w-full">
@@ -98,7 +98,15 @@
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                   <div class="absolute bottom-0 p-4 text-left">
                     <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Web Design</p>
-                    <p class="text-sm text-white">Sites modernos e profissionais.</p>
+                    <p class="text-sm text-white">Landing Pages modernas e profissionais.</p>
+                  </div>
+                </div>
+                <div class="relative min-w-full">
+                  <img src="/servico-3.png" class="h-64 w-full object-cover" alt="" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-0 p-4 text-left">
+                    <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Social Media</p>
+                    <p class="text-sm text-white">Presença digital estratégica e impactante.</p>
                   </div>
                 </div>
               </div>
@@ -175,13 +183,44 @@
       logo.style.opacity = opacity;
     });
 
-    // Lógica do Carrossel
+    // Lógica do Carrossel (Arraste + 12 segundos)
     const track = document.getElementById('track');
+    const carouselArea = document.getElementById('carousel-area');
     let index = 0;
-    setInterval(() => {
-      index = (index + 1) % 2; // Número de imagens
+    const totalSlides = 3;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function moveCarousel() {
       track.style.transform = `translateX(-${index * 100}%)`;
-    }, 3500);
+    }
+
+    function next() {
+      index = (index + 1) % totalSlides;
+      moveCarousel();
+    }
+
+    function prev() {
+      index = (index === 0) ? totalSlides - 1 : index - 1;
+      moveCarousel();
+    }
+
+    // Swipe para Mobile
+    carouselArea.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+    carouselArea.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) next();
+      if (touchEndX - touchStartX > 50) prev();
+      resetTimer();
+    });
+
+    // Timer de 12 segundos
+    let timer = setInterval(next, 12000);
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(next, 12000);
+    }
   </script>
 </body>
 </html>
