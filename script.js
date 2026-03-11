@@ -28,7 +28,7 @@ function updateCarousel() {
   
   dots.forEach((dot, index) => {
     if (index === currentSlide) {
-      // Estilo Ativo (Azul Brilhante)
+      // Estilo Ativo (Azul Brilhante)git
       dot.className = "carousel-dot h-2.5 rounded-full transition-all duration-300 w-8 bg-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.5)]";
     } else {
       // Estilo Inativo (Slate Escuro)
