@@ -14,9 +14,9 @@
       background-color: #000;
       scroll-behavior: smooth;
     }
-    /* Transição ultra rápida para acompanhar o dedo */
+    /* Transição mais rápida (0.2s em vez de 0.4s ou 0.5s) */
     .logo-img {
-      transition: transform 0.15s ease-out, opacity 0.15s ease-out; 
+      transition: all 0.2s ease-out; 
       will-change: transform, opacity;
     }
   </style>
@@ -24,40 +24,47 @@
 <body class="bg-black text-white">
   <div class="min-h-screen relative">
     
-    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.2),_transparent_35%)] pointer-events-none"></div>
+    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_30%)] pointer-events-none"></div>
     <div class="fixed left-3 top-3 h-[96%] w-[calc(100%-24px)] rounded-[36px] border border-sky-400/20 pointer-events-none"></div>
 
-    <div class="relative mx-auto flex min-h-screen w-full max-w-md flex-col items-center p-3 pt-8">
+    <div class="relative mx-auto flex min-h-screen w-full max-w-md flex-col items-center p-4 pt-12">
       
-      <div class="w-full rounded-[36px] border border-sky-400/30 bg-zinc-950/95 px-6 py-8 shadow-[0_0_80px_rgba(56,189,248,0.2)] backdrop-blur-md">
+      <div class="w-full rounded-[36px] border border-sky-400/30 bg-zinc-950/90 px-6 py-8 shadow-[0_0_60px_rgba(56,189,248,0.15)] backdrop-blur-md">
         
         <div class="text-center">
-          <div class="mb-4 flex justify-center sticky top-0 z-50 overflow-visible">
-            <img id="logo" src="/logo5.webp" alt="Nexux" class="w-full max-w-[360px] logo-img object-contain" 
-                 style="filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.6));">
+          <div class="mb-6 flex justify-center sticky top-0 z-50">
+            <img id="logo" src="/logo5.webp" alt="Nexux" class="w-[320px] logo-img object-contain" 
+                 style="filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.5));">
           </div>
 
-          <h1 class="-mt-4 bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-4xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.2)]">
+          <h1 class="bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-4xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.2)]">
             Nexux Digital
           </h1>
           <p class="mt-2 text-sm font-semibold uppercase tracking-[0.35em] text-sky-200/90">Marketing de Elite</p>
           
-          <div class="mx-auto mt-6 h-px w-44 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
+          <div class="mx-auto mt-4 h-px w-40 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
         </div>
 
-        <div class="mt-10 space-y-4">
-          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-300/70 bg-gradient-to-r from-[#0a192f] via-zinc-900 to-[#0f2942] px-6 py-4.5 text-base font-bold text-sky-100 shadow-[0_0_20px_rgba(56,189,248,0.15)] transition active:scale-90">
+        <div class="mt-8 space-y-3">
+          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-300/70 bg-gradient-to-r from-[#0a192f] via-zinc-900 to-[#0f2942] px-6 py-4 text-sm font-bold text-sky-100 shadow-[0_0_20px_rgba(56,189,248,0.15)] transition active:scale-95">
             <img src="/whatsapp.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
             <span>Falar no WhatsApp</span>
           </a>
 
-          <a href="https://instagram.com/nexuxmarketingdigital/" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-4.5 text-base font-semibold text-sky-100 transition active:scale-90">
+          <a href="https://instagram.com/nexuxmarketingdigital/" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-4 text-sm font-semibold text-sky-100 transition active:scale-95">
             <img src="/instagram.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
             <span>Ver Instagram</span>
           </a>
         </div>
 
-        <p class="mt-16 text-center text-[10px] tracking-[0.3em] text-zinc-600 uppercase">
+        <div class="mt-10 border-t border-sky-400/20 pt-6">
+           <h2 class="text-center text-lg font-bold text-sky-200 uppercase tracking-widest">Nossos Serviços</h2>
+           <div class="mt-5 overflow-hidden rounded-[28px] border border-sky-400/25 bg-zinc-900/70 p-2">
+              <img src="/servico-1.png" class="h-52 w-full object-cover rounded-[22px]" />
+           </div>
+        </div>
+
+        <p class="mt-12 text-center text-[10px] tracking-widest text-zinc-600 uppercase">
           © 2026 Nexux Digital • Tambaú/SP
         </p>
 
@@ -70,11 +77,11 @@
       const scrollY = window.scrollY;
       const logo = document.getElementById('logo');
       
-      // Efeito Hero "Super Saisível"
-      // Diminui mais rápido (multiplicador 0.0035)
-      const scale = Math.max(0.60, 1 - scrollY * 0.0035); 
-      const translateY = Math.min(scrollY * 0.45, 60);
-      const opacity = Math.max(0.70, 1 - scrollY * 0.003);
+      // EFEITO MAIS RÁPIDO: Aumentei os multiplicadores (0.002 e 0.25)
+      // Isso faz a logo encolher com menos "rolagem" de dedo
+      const scale = Math.max(0.65, 1 - scrollY * 0.0025); 
+      const translateY = Math.min(scrollY * 0.35, 50);
+      const opacity = Math.max(0.75, 1 - scrollY * 0.002);
 
       logo.style.transform = `translateY(-${translateY}px) scale(${scale})`;
       logo.style.opacity = opacity;
