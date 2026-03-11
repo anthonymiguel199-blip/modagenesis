@@ -3,128 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Especialistas em marketing local para Tambaú e região.">
-  <title>Nexux Marketing Digital</title>
+  <title>Nexux Marketing Digital | Atraia Clientes</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
   <style>
     html, body {
       width: 100%;
       overflow-x: hidden;
       margin: 0;
       padding: 0;
-      background-color: #020617;
+      background-color: #000;
+      scroll-behavior: smooth;
     }
-
-    /* EFEITO HERO: Logo que encolhe e fica FIXA no topo */
-    .sticky-header {
-      position: fixed; /* Mudamos para fixed para garantir que não saia do lugar */
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      transition: all 0.4s ease;
-      padding: 2rem 1rem;
-      pointer-events: none;
-    }
-
-    .sticky-header.scrolled {
-      padding: 0.6rem 1rem;
-      background: rgba(2, 6, 23, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
-      pointer-events: auto;
-    }
-
     .logo-img {
-      width: 260px;
-      transition: all 0.4s ease;
-      filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.3));
-      pointer-events: auto;
-    }
-
-    .scrolled .logo-img {
-      width: 130px; /* Encolhe pela metade */
-    }
-
-    /* Ajuste para o conteúdo não bater na logo fixa */
-    .content-wrapper {
-      padding-top: 180px; /* Dá espaço para a logo grande aparecer */
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform, opacity;
     }
   </style>
 </head>
-<body class="bg-[#020617] text-white">
-
-  <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.15),_transparent_30%)] pointer-events-none"></div>
-
-  <header id="main-header" class="sticky-header">
-    <img id="logo" src="/logo5.webp" alt="Nexux" class="logo-img" />
-  </header>
-
-  <div class="content-wrapper relative mx-auto flex flex-col items-center w-full max-w-[420px] px-4 pb-20">
+<body class="bg-black text-white font-sans">
+  <div class="min-h-screen overflow-x-hidden relative">
     
-    <div class="w-full rounded-[32px] border border-sky-400/20 bg-slate-950/80 p-6 shadow-2xl backdrop-blur-md">
+    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(37,99,235,0.12),_transparent_22%)] pointer-events-none"></div>
+    <div class="fixed inset-0 opacity-60 bg-[linear-gradient(135deg,transparent_0%,transparent_18%,rgba(56,189,248,0.14)_18.4%,transparent_19.2%,transparent_81%,rgba(37,99,235,0.12)_81.4%,transparent_82.2%)] pointer-events-none"></div>
+    <div class="fixed left-3 top-3 h-[96%] w-[calc(100%-24px)] rounded-[36px] border border-sky-400/25 pointer-events-none"></div>
+
+    <div class="relative mx-auto flex min-h-screen w-full max-w-md flex-col items-center justify-start p-4 pt-12">
       
-      <div class="text-center">
-        <h1 class="bg-gradient-to-b from-white via-sky-200 to-blue-500 bg-clip-text text-2xl font-black text-transparent uppercase tracking-tight">
-          Quer mais clientes para o seu negócio?
-        </h1>
-        <p class="mt-4 text-[11px] font-bold text-sky-300/90 uppercase tracking-widest">
-          Google Ads • Redes Sociais • Sites
-        </p>
-        <div class="mx-auto mt-6 h-[1px] w-24 bg-sky-500/30"></div>
-      </div>
+      <div class="w-full rounded-[36px] border border-sky-400/35 bg-zinc-950/90 px-6 py-8 shadow-[0_0_60px_rgba(56,189,248,0.15)] backdrop-blur-sm">
+        
+        <div class="text-center">
+          <div class="mb-8 flex justify-center overflow-visible sticky top-0 z-50">
+            <img id="logo" src="/logo5.webp" alt="Nexux" class="w-80 logo-img object-contain" 
+                 style="filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.45));">
+          </div>
 
-      <div class="mt-8 space-y-4">
-        <a href="https://wa.me/5519974038573" target="_blank" class="flex items-center justify-center gap-3 rounded-full border border-sky-400/50 bg-gradient-to-r from-slate-900 to-blue-900 py-4 text-sm font-bold shadow-lg transition-transform active:scale-95">
-          <img src="/whatsapp.png" class="h-5 w-5" alt="Zap">
-          <span>Falar no WhatsApp</span>
-        </a>
+          <h1 class="bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-4xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.18)]">
+            Nexux Digital
+          </h1>
 
-        <a href="https://www.instagram.com/nexuxmarketingdigital/" target="_blank" class="flex items-center justify-center gap-3 rounded-full border border-white/10 bg-slate-900/80 py-4 text-sm font-semibold transition-transform active:scale-95">
-          <img src="/instagram.png" class="h-5 w-5" alt="Insta">
-          <span>Ver Instagram</span>
-        </a>
+          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.35em] text-sky-200/90">
+            Marketing de Elite
+          </p>
 
-        <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" class="flex items-center justify-center gap-3 rounded-full border border-white/10 bg-slate-900/80 py-4 text-[12px] font-semibold transition-transform active:scale-95">
-          <img src="/mapa.png" class="h-5 w-5" alt="Maps">
-          <span>Ver Empresa no Google</span>
-        </a>
-      </div>
+          <div class="mx-auto mt-4 h-px w-40 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
 
-      <div class="mt-10 border-t border-white/10 pt-8">
-        <h2 class="text-center text-lg font-bold text-sky-200">Nossos Serviços</h2>
-        <div id="carousel-container" class="mt-5 overflow-hidden rounded-2xl border border-sky-500/20 bg-black/40 p-1">
-          <div class="relative overflow-hidden rounded-xl">
-            <div id="carousel-track" class="flex transition-transform duration-500">
-              <div class="min-w-full">
-                <img src="/servico-1.png" class="h-48 w-full object-cover">
-              </div>
-              <div class="min-w-full">
-                <img src="/servico-2.png" class="h-48 w-full object-cover">
+          <p class="mx-auto mt-4 max-w-xs text-sm leading-6 text-zinc-300">
+            Aumentamos as vendas do seu negócio com Google Ads, Redes Sociais e sites profissionais. 
+            Resultados reais para o seu caixa.
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-3">
+          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-300/70 bg-gradient-to-r from-[#0a192f] via-zinc-900 to-[#0f2942] px-6 py-3.5 text-sm font-semibold text-sky-100 shadow-[0_0_20px_rgba(56,189,248,0.15)] transition hover:-translate-y-0.5">
+            <img src="/whatsapp.png" class="absolute left-6 h-5 w-5 object-contain" alt="">
+            <span>Falar no WhatsApp</span>
+          </a>
+
+          <a href="https://instagram.com/nexuxmarketingdigital/" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-3.5 text-sm font-semibold text-sky-100 transition hover:-translate-y-0.5">
+            <img src="/instagram.png" class="absolute left-6 h-5 w-5 object-contain" alt="">
+            <span>Ver Instagram</span>
+          </a>
+
+          <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-3.5 text-sm font-semibold text-sky-100 transition hover:-translate-y-0.5">
+            <img src="/mapa.png" class="absolute left-6 h-5 w-5 object-contain" alt="">
+            <span>Ver no Google Maps</span>
+          </a>
+        </div>
+
+        <div id="servicos" class="mt-10 border-t border-sky-400/20 pt-6">
+          <div class="text-center">
+            <h2 class="text-lg font-bold text-sky-200 uppercase tracking-widest">Nossos Serviços</h2>
+            <p class="mt-2 text-sm text-zinc-400">Deslize para ver resultados.</p>
+          </div>
+
+          <div class="group mt-5 overflow-hidden rounded-[28px] border border-sky-400/25 bg-zinc-900/70 p-3 shadow-[0_0_30px_rgba(56,189,248,0.08)]">
+            <div class="relative overflow-hidden rounded-[22px]" id="carousel">
+              <div id="track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%)">
+                <div class="relative min-w-full">
+                  <img src="/servico-1.png" class="h-64 w-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-0 p-4 text-left">
+                    <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Google Ads</p>
+                    <p class="text-sm text-white">Anúncios que vendem todo dia.</p>
+                  </div>
+                </div>
+                <div class="relative min-w-full">
+                  <img src="/servico-2.png" class="h-64 w-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-0 p-4 text-left">
+                    <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Web Design</p>
+                    <p class="text-sm text-white">Sites modernos e profissionais.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
+        <div class="mt-12 grid grid-cols-2 gap-3">
+          <div class="p-4 rounded-3xl border border-sky-400/10 bg-zinc-900/40 text-center">
+            <span class="text-2xl">🚀</span>
+            <h3 class="mt-2 text-[10px] font-bold text-sky-100 uppercase">Velocidade</h3>
+            <p class="mt-1 text-[9px] text-zinc-400">Sites que carregam em milissegundos.</p>
+          </div>
+          <div class="p-4 rounded-3xl border border-sky-400/10 bg-zinc-900/40 text-center">
+            <span class="text-2xl">🎯</span>
+            <h3 class="mt-2 text-[10px] font-bold text-sky-100 uppercase">Foco</h3>
+            <p class="mt-1 text-[9px] text-zinc-400">Público certo para o seu negócio.</p>
+          </div>
+        </div>
+
+        <p class="mt-12 text-center text-[10px] tracking-widest text-zinc-600 uppercase">
+          © 2026 Nexux Digital • Tambaú/SP
+        </p>
+
+      </div>
     </div>
   </div>
 
-  <script src="./script.js"></script>
   <script>
-    const header = document.getElementById('main-header');
+    // LÓGICA DO SCROLL (IGUAL AO REACT QUE VOCÊ MANDOU)
     window.addEventListener('scroll', () => {
-      // Quando passar de 50px de rolagem, ativa o modo "encolhido"
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      const scrollY = window.scrollY;
+      const logo = document.getElementById('logo');
+      
+      const scale = Math.max(0.70, 1 - scrollY * 0.0012);
+      const translateY = Math.min(scrollY * 0.20, 40);
+      const opacity = Math.max(0.80, 1 - scrollY * 0.001);
+
+      logo.style.transform = `translateY(-${translateY}px) scale(${scale})`;
+      logo.style.opacity = opacity;
     });
+
+    // LÓGICA DO CARROSSEL
+    const track = document.getElementById('track');
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % 2; // Altere para o número de imagens que tiver
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }, 3500);
   </script>
 </body>
 </html>
