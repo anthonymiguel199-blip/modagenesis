@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Nexux Marketing Digital</title>
+  <title>Nexux Marketing Digital | Atraia Clientes</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html, body {
@@ -14,62 +14,144 @@
       background-color: #000;
       scroll-behavior: smooth;
     }
-    .logo-img {
-      transition: transform 0.15s ease-out, opacity 0.15s ease-out; 
+    .logo-anim {
+      transition: all 0.2s ease-out;
       will-change: transform, opacity;
     }
+    /* Estilo para esconder o scrollbar do carrossel no mobile */
+    #track::-webkit-scrollbar { display: none; }
   </style>
 </head>
-<body class="bg-black text-white">
-  <div class="min-h-screen relative">
+<body class="bg-black text-white font-sans">
+  <div class="min-h-screen overflow-x-hidden relative">
     
-    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.2),_transparent_35%)] pointer-events-none"></div>
-    <div class="fixed left-3 top-3 h-[96%] w-[calc(100%-24px)] rounded-[36px] border border-sky-400/20 pointer-events-none"></div>
+    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(37,99,235,0.12),_transparent_22%)] pointer-events-none"></div>
+    <div class="fixed inset-0 opacity-60 bg-[linear-gradient(135deg,transparent_0%,transparent_18%,rgba(56,189,248,0.14)_18.4%,transparent_19.2%,transparent_81%,rgba(37,99,235,0.12)_81.4%,transparent_82.2%)] pointer-events-none"></div>
+    <div class="fixed left-3 top-3 h-[96%] w-[calc(100%-24px)] rounded-[36px] border border-sky-400/25 pointer-events-none"></div>
 
-    <div class="relative mx-auto flex min-h-screen w-full max-w-md flex-col items-center p-3 pt-8">
+    <div class="relative mx-auto flex min-h-screen w-full max-w-md flex-col items-center justify-start p-4 pt-12">
       
-      <div class="w-full rounded-[36px] border border-sky-400/30 bg-zinc-950/95 px-6 py-8 shadow-[0_0_80px_rgba(56,189,248,0.2)] backdrop-blur-md">
+      <div class="w-full rounded-[36px] border border-sky-400/35 bg-zinc-950/90 px-6 py-8 shadow-[0_0_60px_rgba(56,189,248,0.15)] backdrop-blur-sm">
         
         <div class="text-center">
-          <div class="mb-4 flex justify-center sticky top-0 z-50 overflow-visible">
-            <img id="logo" src="/logo5.webp" alt="Nexux" class="w-full max-w-[360px] logo-img object-contain" 
-                 style="filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.6));">
+          <div class="mb-8 flex justify-center overflow-visible sticky top-0 z-50">
+            <img id="logo" src="/logo5.webp" alt="Nexux" class="w-80 logo-anim object-contain" 
+                 style="filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.45));">
           </div>
 
-          <h1 class="-mt-4 bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-4xl font-black tracking-tight text-transparent">
+          <h1 class="bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-4xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.18)]">
             Nexux Digital
           </h1>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.35em] text-sky-200/90">Marketing de Elite</p>
-          
-          <div class="mx-auto mt-6 h-px w-44 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
+
+          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.35em] text-sky-200/90">
+            Marketing de Elite
+          </p>
+
+          <div class="mx-auto mt-4 h-px w-40 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
+
+          <p class="mx-auto mt-4 max-w-xs text-sm leading-6 text-zinc-300">
+            Aumentamos as vendas do seu negócio com Google Ads, Redes Sociais e sites profissionais. Resultados reais para o seu caixa.
+          </p>
         </div>
 
-        <div class="mt-10 space-y-4">
-          
-          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-300/70 bg-gradient-to-r from-[#0a192f] via-zinc-900 to-[#0f2942] px-6 py-4.5 text-base font-bold text-sky-100 shadow-[0_0_20px_rgba(56,189,248,0.15)] transition active:scale-90">
-            <img src="/whatsapp.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
+        <div class="mt-8 space-y-3">
+          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-300/70 bg-gradient-to-r from-[#0a192f] via-zinc-900 to-[#0f2942] px-6 py-3.5 text-sm font-semibold text-sky-100 shadow-[0_0_20px_rgba(56,189,248,0.15)] transition hover:-translate-y-0.5">
+            <img src="/whatsapp.png" class="absolute left-6 h-5 w-5 object-contain" alt="">
             <span>Falar no WhatsApp</span>
           </a>
 
-          <a href="https://instagram.com/nexuxmarketingdigital/" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-4.5 text-base font-semibold text-sky-100 transition active:scale-90">
-            <img src="/instagram.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
+          <a href="https://instagram.com/nexuxmarketingdigital/" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-3.5 text-sm font-semibold text-sky-100 transition hover:-translate-y-0.5">
+            <img src="/instagram.png" class="absolute left-6 h-5 w-5 object-contain" alt="">
             <span>Ver Instagram</span>
           </a>
 
-          <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-4.5 text-base font-semibold text-sky-100 transition active:scale-90">
-            <img src="/mapa.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
+          <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-3.5 text-sm font-semibold text-sky-100 transition hover:-translate-y-0.5">
+            <img src="/mapa.png" class="absolute left-6 h-5 w-5 object-contain" alt="">
             <span>Ver Empresa no Google</span>
           </a>
-
-          <a href="https://search.google.com/local/writereview?placeid=ChIJ-e8n-r-izpQRQo_jK_Yt9_o" target="_blank" class="relative flex items-center justify-center rounded-full border border-sky-400/45 bg-zinc-900/85 px-6 py-4.5 text-base font-semibold text-sky-100 transition active:scale-90">
-            <img src="/google.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
-            <span>Avaliar Empresa no Google</span>
-          </a>
-
         </div>
 
-        <p class="mt-16 text-center text-[10px] tracking-[0.3em] text-zinc-600 uppercase">
-          © 2026 Nexux Digital • Tambaú/SP
+        <div id="servicos" class="mt-10 border-t border-sky-400/20 pt-6">
+          <div class="text-center">
+            <h2 class="text-lg font-bold text-sky-200 uppercase tracking-widest">Nossos Serviços</h2>
+            <p class="mt-2 text-sm text-zinc-400">Deslize para ver resultados.</p>
+          </div>
+
+          <div class="group mt-5 overflow-hidden rounded-[28px] border border-sky-400/25 bg-zinc-900/70 p-3 shadow-[0_0_30px_rgba(56,189,248,0.08)]">
+            <div class="relative overflow-hidden rounded-[22px]">
+              <div id="track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%)">
+                <div class="relative min-w-full">
+                  <img src="/servico-1.png" class="h-64 w-full object-cover" alt="" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-0 p-4 text-left">
+                    <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Google Ads</p>
+                    <p class="text-sm text-white">Anúncios que vendem todo dia.</p>
+                  </div>
+                </div>
+                <div class="relative min-w-full">
+                  <img src="/servico-2.png" class="h-64 w-full object-cover" alt="" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-0 p-4 text-left">
+                    <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Web Design</p>
+                    <p class="text-sm text-white">Sites modernos e profissionais.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 space-y-6">
+          <h2 class="text-center text-lg font-bold text-sky-200 uppercase tracking-widest">Por que nos escolher?</h2>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-4 rounded-3xl border border-sky-400/10 bg-zinc-900/40 backdrop-blur-sm transition-all hover:border-sky-400/40">
+              <span class="text-2xl">📈</span>
+              <h3 class="mt-2 text-xs font-bold text-sky-100 uppercase">Resultados</h3>
+              <p class="mt-1 text-[11px] text-zinc-400 leading-tight">Foco total no retorno do seu investimento.</p>
+            </div>
+            <div class="p-4 rounded-3xl border border-sky-400/10 bg-zinc-900/40 backdrop-blur-sm transition-all hover:border-sky-400/40">
+              <span class="text-2xl">🎯</span>
+              <h3 class="mt-2 text-xs font-bold text-sky-100 uppercase">Estratégia</h3>
+              <p class="mt-1 text-[11px] text-zinc-400 leading-tight">Público qualificado para o seu negócio.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 border-t border-sky-400/20 pt-8 pb-4">
+          <h2 class="text-center text-lg font-bold text-sky-200 uppercase tracking-widest mb-6">Como Funciona</h2>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-sky-400/10">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-400 text-black font-bold text-sm">1</span>
+              <div>
+                <p class="text-xs font-bold text-sky-100 uppercase">Consultoria</p>
+                <p class="text-[11px] text-zinc-400">Analisamos seu negócio e definimos as melhores estratégias digitais.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-sky-400/10">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-400 text-black font-bold text-sm">2</span>
+              <div>
+                <p class="text-xs font-bold text-sky-100 uppercase">Execução</p>
+                <p class="text-[11px] text-zinc-400">Criamos seus anúncios, sites e campanhas de alta conversão.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-sky-400/10">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-400 text-black font-bold text-sm">3</span>
+              <div>
+                <p class="text-xs font-bold text-sky-100 uppercase">Escala</p>
+                <p class="text-[11px] text-zinc-400">Monitoramos e otimizamos para atrair cada vez mais clientes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 px-2">
+          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center w-full py-4 rounded-full bg-gradient-to-r from-sky-500 via-sky-400 to-blue-600 text-black font-black uppercase tracking-tighter text-sm shadow-[0_0_25px_rgba(56,189,248,0.35)] hover:scale-[1.02] active:scale-95 transition-all">
+            Impulsionar meu negócio agora!
+          </a>
+        </div>
+
+        <p class="mt-12 text-center text-[10px] tracking-widest text-zinc-600 uppercase">
+          © 2026 Nexux Digital • Todos os direitos reservados
         </p>
 
       </div>
@@ -77,17 +159,24 @@
   </div>
 
   <script>
+    // Lógica da Logo (Hero)
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       const logo = document.getElementById('logo');
-      
-      const scale = Math.max(0.60, 1 - scrollY * 0.0035); 
-      const translateY = Math.min(scrollY * 0.45, 60);
-      const opacity = Math.max(0.70, 1 - scrollY * 0.003);
-
+      const scale = Math.max(0.72, 1 - scrollY * 0.0012);
+      const translateY = Math.min(scrollY * 0.18, 30);
+      const opacity = Math.max(0.82, 1 - scrollY * 0.001);
       logo.style.transform = `translateY(-${translateY}px) scale(${scale})`;
       logo.style.opacity = opacity;
     });
+
+    // Lógica do Carrossel
+    const track = document.getElementById('track');
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % 2; // Número de imagens
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }, 3500);
   </script>
 </body>
 </html>
