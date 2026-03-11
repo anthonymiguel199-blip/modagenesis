@@ -8,15 +8,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
-    /* Reset de força bruta para evitar zoom out indesejado */
+    /* Reset de força bruta para evitar zoom out e rolagem lateral */
     html, body {
       width: 100%;
       overflow-x: hidden;
       margin: 0;
       padding: 0;
       touch-action: manipulation;
+      background-color: #020617;
     }
-    /* Garante que imagens não estoure a largura da tela */
+    /* Garante que nada ultrapasse o limite da tela do celular */
+    * {
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
     img {
       max-width: 100%;
       height: auto;
@@ -31,26 +36,26 @@
       <div class="absolute inset-0 opacity-60 bg-[linear-gradient(135deg,transparent_0%,transparent_18%,rgba(56,189,248,0.12)_18.4%,transparent_19.2%,transparent_81%,rgba(37,99,235,0.1)_81.4%,transparent_82.2%)]"></div>
       <div class="absolute left-3 top-3 h-[96%] w-[calc(100%-24px)] rounded-[36px] border border-sky-400/20"></div>
 
-      <div class="relative mx-auto flex min-h-screen w-full max-w-md items-center justify-center p-4">
+      <div class="relative mx-auto flex min-h-screen w-full max-w-[380px] items-center justify-center p-4">
         
-        <div class="w-full rounded-[36px] border border-sky-400/30 bg-slate-950/90 px-5 py-8 shadow-[0_0_60px_rgba(56,189,248,0.12)] backdrop-blur-sm">
+        <div class="w-full rounded-[36px] border border-sky-400/30 bg-slate-950/90 px-6 py-8 shadow-[0_0_60px_rgba(56,189,248,0.12)] backdrop-blur-sm">
           
           <div class="text-center">
             <div class="mb-0 flex justify-center overflow-visible">
-              <img id="logo" src="/logo5.webp" alt="Nexux" class="w-[260px] max-w-full object-contain transition-transform duration-150 hover:scale-105 md:w-[350px]" style="filter: drop-shadow(0 0 20px rgba(135, 169, 184, 0.4)); will-change: transform, opacity;" />
+              <img id="logo" src="/logo5.webp" alt="Nexux" class="w-[260px] max-w-full object-contain transition-transform duration-150 hover:scale-105" style="filter: drop-shadow(0 0 20px rgba(135, 169, 184, 0.4)); will-change: transform, opacity;" />
             </div>
 
-            <h1 class="-mt-4 bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.2)] md:text-2xl">
+            <h1 class="-mt-4 bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.2)]">
               QUER MAIS CLIENTES PARA O SEU NEGÓCIO?
             </h1>
             
-            <p class="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-sky-200/90 leading-relaxed md:text-xs">
+            <p class="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-sky-200/90 leading-relaxed">
               Ajudamos empresas a atrair mais clientes com Google Meu Negócio, Ads e Redes Sociais.<br>Mais visibilidade, contatos e vendas.
             </p>
             
             <div class="mx-auto mt-4 h-px w-32 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
             
-            <p class="mx-auto mt-4 max-w-xs text-sm leading-6 text-slate-300 md:text-base">
+            <p class="mx-auto mt-4 max-w-xs text-sm leading-6 text-slate-300">
               Transformamos o digital da sua empresa em resultados reais para o seu caixa.
             </p>
           </div>
@@ -68,18 +73,18 @@
 
             <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 border-blue-400/30 bg-slate-900/80 text-white">
               <img src="/mapa.png" class="h-5 w-5 object-contain" alt="icone" />
-              <span class="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[12px] md:text-sm">Ver Empresa no Google</span>
+              <span class="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[12px]">Ver Empresa no Google</span>
             </a>
 
             <a href="https://g.page/r/CS_WHBu00g1wEBM/review" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 border-blue-400/30 bg-slate-900/80 text-white">
               <img src="/avaliacao.png" class="h-5 w-5 object-contain" alt="icone" />
-              <span class="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[12px] md:text-sm">Avaliar no Google</span>
+              <span class="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[12px]">Avaliar no Google</span>
             </a>
           </div>
 
           <div class="mt-10 border-t border-sky-400/20 pt-6">
             <div class="text-center">
-              <h2 class="text-base font-bold text-sky-200 md:text-lg">Nossos Serviços</h2>
+              <h2 class="text-base font-bold text-sky-200">Nossos Serviços</h2>
               <p class="mt-1 text-[12px] text-slate-400">Deslize para ver um pouco do nosso trabalho.</p>
             </div>
 
@@ -89,7 +94,7 @@
                 <div id="carousel-track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%);">
                   
                   <div class="relative min-w-full">
-                    <img src="/servico-1.png" alt="Serviço 1" class="h-44 w-full object-cover md:h-64" />
+                    <img src="/servico-1.png" alt="Serviço 1" class="h-44 w-full object-cover" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 text-left">
                       <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">Desenvolvimento Web</p>
@@ -98,20 +103,20 @@
                   </div>
 
                   <div class="relative min-w-full">
-                    <img src="/servico-2.png" alt="Serviço 2" class="h-44 w-full object-cover md:h-64" />
+                    <img src="/servico-2.png" alt="Serviço 2" class="h-44 w-full object-cover" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 text-left">
                       <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">Google Meu Negócio</p>
-                      <p class="mt-1 text-[10px] leading-tight text-white">Otimização completa para dominar as buscas locais.</p>
+                      <p class="mt-1 text-[10px] leading-tight text-white">Domine as buscas locais.</p>
                     </div>
                   </div>
 
                   <div class="relative min-w-full">
-                    <img src="/servico-3.png" alt="Serviço 3" class="h-44 w-full object-cover md:h-64" />
+                    <img src="/servico-3.png" alt="Serviço 3" class="h-44 w-full object-cover" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 text-left">
                       <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">Tráfego Pago (Anúncios)</p>
-                      <p class="mt-1 text-sm font-medium text-white">Venda para quem realmente quer comprar.</p>
+                      <p class="mt-1 text-sm font-medium text-white">Venda para quem quer comprar.</p>
                     </div>
                   </div>
 
