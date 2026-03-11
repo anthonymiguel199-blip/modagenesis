@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Aumente as vendas do seu negócio com Google Meu Negócio, Ads e sites profissionais. Especialistas em marketing local para Tambaú e cidades vizinhas.">
-  <title>Nexux Marketing Digital | Atraia Clientes em Tambaú e Região</title>
+  <meta name="description" content="Especialistas em marketing local para Tambaú e região.">
+  <title>Nexux Marketing Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
@@ -13,145 +13,113 @@
       overflow-x: hidden;
       margin: 0;
       padding: 0;
-      touch-action: manipulation;
       background-color: #020617;
-      scroll-behavior: smooth;
-    }
-    * {
-      max-width: 100vw;
-      box-sizing: border-box;
     }
 
-    /* EFEITO HERO LINKTREE: Header fixo que encolhe */
+    /* EFEITO HERO: Logo que encolhe e fica FIXA no topo */
     .sticky-header {
-      position: sticky;
+      position: fixed; /* Mudamos para fixed para garantir que não saia do lugar */
       top: 0;
-      z-index: 100;
+      left: 0;
       width: 100%;
+      z-index: 100;
       display: flex;
       justify-content: center;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      padding-top: 2.5rem;
-      padding-bottom: 1.5rem;
+      transition: all 0.4s ease;
+      padding: 2rem 1rem;
+      pointer-events: none;
     }
 
-    /* Estilo quando o usuário rola a página */
     .sticky-header.scrolled {
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
-      background: rgba(2, 6, 23, 0.7);
-      backdrop-filter: blur(12px); /* Correção do blur aqui */
+      padding: 0.6rem 1rem;
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+      pointer-events: auto;
     }
 
     .logo-img {
-      width: 280px; /* Tamanho inicial grande */
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      filter: drop-shadow(0 0 20px rgba(135, 169, 184, 0.3));
+      width: 260px;
+      transition: all 0.4s ease;
+      filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.3));
+      pointer-events: auto;
     }
 
     .scrolled .logo-img {
-      width: 150px; /* Tamanho reduzido igual Linktree */
+      width: 130px; /* Encolhe pela metade */
     }
 
-    @media (max-width: 480px) {
-      h1 { font-size: 1.45rem !important; line-height: 1.2 !important; }
+    /* Ajuste para o conteúdo não bater na logo fixa */
+    .content-wrapper {
+      padding-top: 180px; /* Dá espaço para a logo grande aparecer */
     }
   </style>
 </head>
-<body class="bg-[#020617]">
-  <div class="min-h-screen w-full overflow-x-hidden bg-[#020617] text-white">
-    
-    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.15),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(37,99,235,0.12),_transparent_22%)] pointer-events-none"></div>
-    
-    <div class="fixed left-2 top-2 h-[98%] w-[calc(100%-16px)] rounded-[36px] border border-sky-400/10 pointer-events-none z-0"></div>
+<body class="bg-[#020617] text-white">
 
-    <header id="main-header" class="sticky-header">
-      <img id="logo" src="/logo5.webp" alt="Nexux" class="logo-img" />
-    </header>
+  <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.15),_transparent_30%)] pointer-events-none"></div>
 
-    <div class="relative mx-auto flex flex-col items-center p-2 pb-20 w-full max-w-[420px] z-10">
+  <header id="main-header" class="sticky-header">
+    <img id="logo" src="/logo5.webp" alt="Nexux" class="logo-img" />
+  </header>
+
+  <div class="content-wrapper relative mx-auto flex flex-col items-center w-full max-w-[420px] px-4 pb-20">
+    
+    <div class="w-full rounded-[32px] border border-sky-400/20 bg-slate-950/80 p-6 shadow-2xl backdrop-blur-md">
       
-      <div class="w-full rounded-[32px] border border-sky-400/30 bg-slate-950/90 px-5 py-8 shadow-[0_0_60px_rgba(56,189,248,0.12)] backdrop-blur-md">
-        
-        <div class="text-center">
-          <h1 class="bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-2xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.2)]">
-            QUER MAIS CLIENTES PARA O SEU NEGÓCIO?
-          </h1>
-          
-          <p class="mt-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-sky-200/90 leading-relaxed px-2">
-            Aumente as vendas com Google Ads e Redes Sociais.
-          </p>
-          
-          <div class="mx-auto mt-5 h-px w-32 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
-        </div>
+      <div class="text-center">
+        <h1 class="bg-gradient-to-b from-white via-sky-200 to-blue-500 bg-clip-text text-2xl font-black text-transparent uppercase tracking-tight">
+          Quer mais clientes para o seu negócio?
+        </h1>
+        <p class="mt-4 text-[11px] font-bold text-sky-300/90 uppercase tracking-widest">
+          Google Ads • Redes Sociais • Sites
+        </p>
+        <div class="mx-auto mt-6 h-[1px] w-24 bg-sky-500/30"></div>
+      </div>
 
-        <div class="mt-8 space-y-3">
-          <a href="https://wa.me/5519974038573" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-bold transition duration-200 hover:-translate-y-0.5 border-sky-400/60 bg-gradient-to-r from-[#0a192f] via-slate-900 to-[#0f2942] text-white shadow-[0_0_25px_rgba(56,189,248,0.2)]">
-            <img src="/whatsapp.png" class="h-6 w-6 object-contain" alt="WhatsApp" />
-            <span class="absolute left-1/2 -translate-x-1/2">Falar no WhatsApp</span>
-          </a>
+      <div class="mt-8 space-y-4">
+        <a href="https://wa.me/5519974038573" target="_blank" class="flex items-center justify-center gap-3 rounded-full border border-sky-400/50 bg-gradient-to-r from-slate-900 to-blue-900 py-4 text-sm font-bold shadow-lg transition-transform active:scale-95">
+          <img src="/whatsapp.png" class="h-5 w-5" alt="Zap">
+          <span>Falar no WhatsApp</span>
+        </a>
 
-          <a href="https://www.instagram.com/nexuxmarketingdigital/" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 border-blue-400/30 bg-slate-900/80 text-white">
-            <img src="/instagram.png" class="h-6 w-6 object-contain" alt="Instagram" />
-            <span class="absolute left-1/2 -translate-x-1/2">Ver Instagram</span>
-          </a>
+        <a href="https://www.instagram.com/nexuxmarketingdigital/" target="_blank" class="flex items-center justify-center gap-3 rounded-full border border-white/10 bg-slate-900/80 py-4 text-sm font-semibold transition-transform active:scale-95">
+          <img src="/instagram.png" class="h-5 w-5" alt="Insta">
+          <span>Ver Instagram</span>
+        </a>
 
-          <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" rel="noopener" class="relative group flex items-center justify-start gap-3 rounded-full border px-5 py-4 text-[12px] font-semibold transition duration-200 hover:-translate-y-0.5 border-blue-400/30 bg-slate-900/80 text-white">
-            <img src="/mapa.png" class="h-6 w-6 object-contain" alt="Localização" />
-            <span class="absolute left-1/2 -translate-x-1/2 whitespace-nowrap">Ver Empresa no Google</span>
-          </a>
-        </div>
+        <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" class="flex items-center justify-center gap-3 rounded-full border border-white/10 bg-slate-900/80 py-4 text-[12px] font-semibold transition-transform active:scale-95">
+          <img src="/mapa.png" class="h-5 w-5" alt="Maps">
+          <span>Ver Empresa no Google</span>
+        </a>
+      </div>
 
-        <div class="mt-10 border-t border-sky-400/20 pt-6">
-          <div class="text-center">
-            <h2 class="text-lg font-bold text-sky-200">Nossos Serviços</h2>
-            <p class="mt-1 text-[12px] text-slate-400">Deslize para ver nosso trabalho.</p>
-          </div>
-
-          <div id="carousel-container" class="group mt-5 overflow-hidden rounded-[28px] border border-sky-400/20 bg-slate-900/60 p-2 shadow-[0_0_30px_rgba(56,189,248,0.05)]">
-            <div class="relative overflow-hidden rounded-[22px]">
-              <div id="carousel-track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%);">
-                <div class="relative min-w-full">
-                  <img src="/servico-1.png" alt="Serviço 1" class="h-48 w-full object-cover" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <p class="text-[10px] font-bold uppercase text-sky-300">Desenvolvimento Web</p>
-                    <p class="text-sm font-medium text-white">Sites modernos e velozes.</p>
-                  </div>
-                </div>
-                <div class="relative min-w-full">
-                  <img src="/servico-2.png" alt="Serviço 2" class="h-48 w-full object-cover" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <p class="text-[10px] font-bold uppercase text-sky-300">Google Meu Negócio</p>
-                    <p class="text-sm font-medium text-white">Domine as buscas locais.</p>
-                  </div>
-                </div>
-                <div class="relative min-w-full">
-                  <img src="/servico-3.png" alt="Serviço 3" class="h-48 w-full object-cover" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <p class="text-[10px] font-bold uppercase text-sky-300">Tráfego Pago</p>
-                    <p class="text-sm font-medium text-white">Anúncios que vendem.</p>
-                  </div>
-                </div>
+      <div class="mt-10 border-t border-white/10 pt-8">
+        <h2 class="text-center text-lg font-bold text-sky-200">Nossos Serviços</h2>
+        <div id="carousel-container" class="mt-5 overflow-hidden rounded-2xl border border-sky-500/20 bg-black/40 p-1">
+          <div class="relative overflow-hidden rounded-xl">
+            <div id="carousel-track" class="flex transition-transform duration-500">
+              <div class="min-w-full">
+                <img src="/servico-1.png" class="h-48 w-full object-cover">
+              </div>
+              <div class="min-w-full">
+                <img src="/servico-2.png" class="h-48 w-full object-cover">
               </div>
             </div>
           </div>
         </div>
-
       </div>
+
     </div>
   </div>
 
   <script src="./script.js"></script>
   <script>
-    // Ativa o encolhimento da logo no scroll
     const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
+      // Quando passar de 50px de rolagem, ativa o modo "encolhido"
+      if (window.scrollY > 50) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
