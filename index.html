@@ -20,20 +20,20 @@
     }
     #track::-webkit-scrollbar { display: none; }
     
-    .dot {
-      transition: all 0.3s ease;
-    }
-    .dot.active {
-      background-color: #38bdf8;
-      width: 1.5rem;
+    .dot { transition: all 0.3s ease; }
+    .dot.active { background-color: #38bdf8; width: 1.5rem; }
+
+    /* Efeito de hover para o grupo (ícone + botão) */
+    .btn-group:hover .icon-float {
+      transform: scale(1.1) translateX(-5px);
+      filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6));
     }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
   <div class="min-h-screen overflow-x-hidden relative">
     
-    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(37,99,235,0.12),_transparent_22%)] pointer-events-none"></div>
-    <div class="fixed inset-0 opacity-60 bg-[linear-gradient(135deg,transparent_0%,transparent_18%,rgba(56,189,248,0.14)_18.4%,transparent_19.2%,transparent_81%,rgba(37,99,235,0.12)_81.4%,transparent_82.2%)] pointer-events-none"></div>
+    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_28%)] pointer-events-none"></div>
     <div class="fixed left-3 top-3 h-[96%] w-[calc(100%-24px)] rounded-[36px] border border-sky-400/25 pointer-events-none"></div>
 
     <div class="relative mx-auto flex min-h-screen w-full max-w-md flex-col items-center justify-start p-4 pt-12">
@@ -43,82 +43,62 @@
         <div class="text-center">
           <div class="mb-8 flex justify-center overflow-visible sticky top-0 z-50">
             <img id="logo" src="/logo5.webp" alt="Nexux" class="w-80 logo-anim object-contain" 
-                 style="filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.45));">
+                 style="filter: drop-shadow(0 0- 16px rgba(56, 189, 248, 0.45));">
           </div>
 
-          <h1 class="bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-4xl font-black tracking-tight text-transparent drop-shadow-[0_2px_10px_rgba(56,189,248,0.18)]">
+          <h1 class="bg-gradient-to-b from-white via-sky-300 to-blue-600 bg-clip-text text-4xl font-black tracking-tight text-transparent">
             Nexux Digital
           </h1>
-
-          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.35em] text-sky-200/90">
-            Marketing de Elite
-          </p>
-
+          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.35em] text-sky-200/90">Marketing de Elite</p>
           <div class="mx-auto mt-4 h-[1px] w-40 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
-
-          <p class="mx-auto mt-4 max-w-xs text-sm leading-6 text-zinc-300">
-            Aumentamos as vendas do seu negócio com Google Ads, Redes Sociais e sites profissionais.
-          </p>
         </div>
 
-        <div class="mt-8 space-y-4">
-          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center rounded-xl border border-sky-300/70 bg-gradient-to-r from-[#0a192f] via-zinc-900 to-[#0f2942] px-6 py-5 text-[10px] font-bold text-sky-100 shadow-[0_0_20px_rgba(56,189,248,0.15)] transition hover:brightness-125 active:scale-95">
-            <img src="/whatsapp.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
-            <span>Receber diagnóstico gratuito no WhatsApp</span>
-          </a>
-
-          <a href="https://instagram.com/nexuxmarketingdigital/" target="_blank" class="relative flex items-center justify-center rounded-xl border border-sky-400/45 bg-zinc-900/85 px-6 py-5 text-[15px] font-semibold text-sky-100 transition hover:bg-zinc-800 active:scale-95">
-            <img src="/instagram.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
-            <span>Ver Instagram</span>
-          </a>
-
-          <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" class="relative flex items-center justify-center rounded-xl border border-sky-400/45 bg-zinc-900/85 px-6 py-5 text-[15px] font-semibold text-sky-100 transition hover:bg-zinc-800 active:scale-95">
-            <img src="/mapa.png" class="absolute left-6 h-6 w-6 object-contain" alt="">
-            <span>Ver Empresa no Google</span>
-          </a>
-
-          <a href="https://g.page/r/CS_WHBu00g1wEBM/review" target="_blank" class="relative flex items-center justify-center rounded-xl border border-sky-400/45 bg-zinc-900/85 px-6 py-5 text-[15px] font-semibold text-sky-100 transition hover:bg-zinc-800 active:scale-95">
-            <img src="/avaliacao.png" class="absolute left-6 h-6 w-6 object-contain" alt="" />
-            <span>Deixe sua avaliação no Google</span>
-          </a>
-        </div>
-
-        <div id="servicos" class="mt-10 border-t border-sky-400/20 pt-6">
-          <div class="text-center">
-            <h2 class="text-lg font-bold text-sky-200 uppercase tracking-widest">Nossos Serviços</h2>
+        <div class="mt-10 space-y-6">
+          
+          <div class="btn-group flex items-center gap-4">
+            <img src="/whatsapp.png" class="icon-float h-8 w-8 object-contain transition-all duration-300" alt="">
+            <a href="https://wa.me/5519974038573" target="_blank" class="flex-1 rounded-xl border border-sky-300/70 bg-gradient-to-r from-[#0a192f] via-zinc-900 to-[#0f2942] py-5 text-[15px] font-bold text-center text-sky-100 shadow-lg active:scale-95 transition-all">
+              Falar no WhatsApp
+            </a>
           </div>
 
-          <div class="group mt-5 overflow-hidden rounded-[28px] border border-sky-400/25 bg-zinc-900/70 p-3 shadow-[0_0_30px_rgba(56,189,248,0.08)]">
-            <div class="relative overflow-hidden rounded-[22px]" id="carousel-area">
-              <div id="track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%)">
-                <div class="relative min-w-full">
-                  <img src="/servico-1.png" class="h-64 w-full object-cover" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                  <div class="absolute bottom-0 p-4 text-left">
-                    <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Google Ads</p>
-                    <p class="text-sm text-white">Vendas diárias escaláveis.</p>
-                  </div>
-                </div>
-                <div class="relative min-w-full">
-                  <img src="/servico-2.png" class="h-64 w-full object-cover" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                  <div class="absolute bottom-0 p-4 text-left">
-                    <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Web Design</p>
-                    <p class="text-sm text-white">Sites de alta performance.</p>
-                  </div>
-                </div>
-                <div class="relative min-w-full">
-                  <img src="/servico-3.png" class="h-64 w-full object-cover" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                  <div class="absolute bottom-0 p-4 text-left">
-                    <p class="text-xs font-bold uppercase tracking-widest text-sky-300">Social Media</p>
-                    <p class="text-sm text-white">Estratégia e autoridade.</p>
-                  </div>
-                </div>
+          <div class="btn-group flex items-center gap-4">
+            <img src="/instagram.png" class="icon-float h-8 w-8 object-contain transition-all duration-300" alt="">
+            <a href="https://instagram.com/nexuxmarketingdigital/" target="_blank" class="flex-1 rounded-xl border border-sky-400/45 bg-zinc-900/85 py-5 text-[15px] font-semibold text-center text-sky-100 active:scale-95 transition-all">
+              Ver Instagram
+            </a>
+          </div>
+
+          <div class="btn-group flex items-center gap-4">
+            <img src="/mapa.png" class="icon-float h-8 w-8 object-contain transition-all duration-300" alt="">
+            <a href="https://share.google/kksENSuBRdt0Dmy5I" target="_blank" class="flex-1 rounded-xl border border-sky-400/45 bg-zinc-900/85 py-5 text-[15px] font-semibold text-center text-sky-100 active:scale-95 transition-all">
+              Empresa no Google
+            </a>
+          </div>
+
+          <div class="btn-group flex items-center gap-4">
+            <img src="/avaliacao.png" class="icon-float h-8 w-8 object-contain transition-all duration-300" alt="">
+            <a href="https://g.page/r/CS_WHBu00g1wEBM/review" target="_blank" class="flex-1 rounded-xl border border-sky-400/45 bg-zinc-900/85 py-5 text-[15px] font-semibold text-center text-sky-100 active:scale-95 transition-all">
+              Avaliar no Google
+            </a>
+          </div>
+
+        </div>
+
+        <div id="servicos" class="mt-12 border-t border-sky-400/20 pt-8">
+          <div class="group overflow-hidden rounded-[28px] border border-sky-400/25 bg-zinc-900/70 p-3" id="carousel-area">
+            <div id="track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%)">
+              <div class="relative min-w-full">
+                <img src="/servico-1.png" class="h-64 w-full object-cover rounded-[22px]" />
+              </div>
+              <div class="relative min-w-full">
+                <img src="/servico-2.png" class="h-64 w-full object-cover rounded-[22px]" />
+              </div>
+              <div class="relative min-w-full">
+                <img src="/servico-3.png" class="h-64 w-full object-cover rounded-[22px]" />
               </div>
             </div>
           </div>
-
           <div class="mt-4 flex justify-center gap-2">
             <div class="dot active h-2 w-2 rounded-full bg-zinc-600"></div>
             <div class="dot h-2 w-2 rounded-full bg-zinc-600"></div>
@@ -126,15 +106,7 @@
           </div>
         </div>
 
-        <div class="mt-10 px-2">
-          <a href="https://wa.me/5519974038573" target="_blank" class="relative flex items-center justify-center w-full py-5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-400 to-blue-600 text-black font-black uppercase tracking-tighter text-sm shadow-[0_0_25px_rgba(56,189,248,0.35)] active:scale-95 transition-all">
-            Impulsionar negócio agora!
-          </a>
-        </div>
-
-        <p class="mt-12 text-center text-[10px] tracking-widest text-zinc-600 uppercase">
-          © 2026 Nexux Digital
-        </p>
+        <p class="mt-12 text-center text-[10px] tracking-widest text-zinc-600 uppercase">© 2026 Nexux Digital</p>
 
       </div>
     </div>
@@ -160,20 +132,11 @@
 
     function updateCarousel() {
       track.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
     }
 
-    function next() {
-      index = (index + 1) % totalSlides;
-      updateCarousel();
-    }
-
-    function prev() {
-      index = (index === 0) ? totalSlides - 1 : index - 1;
-      updateCarousel();
-    }
+    function next() { index = (index + 1) % totalSlides; updateCarousel(); }
+    function prev() { index = (index === 0) ? totalSlides - 1 : index - 1; updateCarousel(); }
 
     carouselArea.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
     carouselArea.addEventListener('touchend', e => {
@@ -184,11 +147,7 @@
     });
 
     let timer = setInterval(next, 12000);
-
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(next, 12000);
-    }
+    function resetTimer() { clearInterval(timer); timer = setInterval(next, 12000); }
   </script>
 </body>
 </html>
